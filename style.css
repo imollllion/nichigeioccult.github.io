@@ -1,0 +1,603 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+
+
+/* --------------------
+   BASIC
+-------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #37d81e;
+    color: #dadd36;
+    font-family:
+        "Inter",
+        "Noto Sans JP",
+        sans-serif;
+
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* --------------------
+   HEADER
+-------------------- */
+
+.header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 24px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 100;
+
+    mix-blend-mode: difference;
+
+    color: white;
+}
+
+.logo {
+    font-size: 14px;
+    font-weight: 600;
+
+    letter-spacing: .12em;
+}
+
+.header nav {
+    display: flex;
+    gap: 32px;
+}
+
+.header nav a {
+    font-size: 11px;
+    letter-spacing: .12em;
+
+    transition: opacity .3s;
+}
+
+.header nav a:hover {
+    opacity: .5;
+}
+
+
+/* --------------------
+   HERO
+-------------------- */
+
+.hero {
+    min-height: 100vh;
+
+    padding:
+        140px 40px
+        50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-small {
+    font-size: 11px;
+
+    letter-spacing: .15em;
+
+    color: #555;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 15vw, 230px);
+
+    line-height: .78;
+
+    letter-spacing: -.07em;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+    margin-left: 10vw;
+}
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+.scroll {
+    text-align: right;
+
+    letter-spacing: .1em;
+}
+
+
+/* --------------------
+   IMAGES
+-------------------- */
+
+.hero-image {
+    padding: 0 40px 140px;
+}
+
+.image-wrapper {
+    overflow: hidden;
+
+    aspect-ratio: 16 / 9;
+}
+
+.image-wrapper img {
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1.5s cubic-bezier(.2,.7,.2,1);
+}
+
+.image-wrapper:hover img {
+    transform: scale(1.04);
+}
+
+.image-caption {
+    margin-top: 10px;
+
+    font-size: 10px;
+
+    color: #777;
+
+    letter-spacing: .15em;
+}
+
+
+/* --------------------
+   SECTIONS
+-------------------- */
+
+.section {
+    padding:
+        160px 40px;
+
+    display: grid;
+
+    grid-template-columns: 20% 80%;
+}
+
+.section-number {
+    font-size: 11px;
+
+    color: #777;
+
+    letter-spacing: .1em;
+}
+
+.section-content {
+    max-width: 1100px;
+}
+
+.eyebrow {
+    font-size: 11px;
+
+    letter-spacing: .18em;
+
+    color: #777;
+
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    font-size: clamp(50px, 9vw, 140px);
+
+    line-height: .9;
+
+    letter-spacing: -.06em;
+
+    font-weight: 500;
+
+    margin-bottom: 70px;
+}
+
+.section h2 span {
+    color: #888;
+}
+
+.description {
+    max-width: 600px;
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+
+/* --------------------
+   ACTIVITIES
+-------------------- */
+
+.activities {
+    background: #111;
+
+    color: #eee;
+}
+
+.activities .eyebrow,
+.activities .section-number {
+    color: #777;
+}
+
+.activity-list {
+    border-top: 1px solid #444;
+}
+
+.activity {
+    min-height: 130px;
+
+    border-bottom: 1px solid #444;
+
+    display: grid;
+
+    grid-template-columns: 80px 1fr 40px;
+
+    align-items: center;
+
+    transition:
+        padding .4s,
+        background .4s;
+}
+
+.activity:hover {
+    padding-left: 25px;
+
+    background: #1a1a1a;
+}
+
+.activity > span:first-child {
+    color: #777;
+
+    font-size: 11px;
+}
+
+.activity h3 {
+    font-size: 22px;
+
+    font-weight: 500;
+
+    letter-spacing: .03em;
+}
+
+.activity p {
+    margin-top: 8px;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+.arrow {
+    font-size: 22px;
+}
+
+
+/* --------------------
+   WIDE PHOTO
+-------------------- */
+
+.wide-photo {
+    position: relative;
+
+    height: 80vh;
+
+    overflow: hidden;
+}
+
+.wide-photo img {
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: grayscale(100%);
+
+    transition:
+        transform 1.5s,
+        filter 1s;
+}
+
+.wide-photo:hover img {
+    transform: scale(1.03);
+
+    filter: grayscale(40%);
+}
+
+.photo-text {
+    position: absolute;
+
+    left: 40px;
+    bottom: 40px;
+
+    color: white;
+
+    font-size: clamp(40px, 7vw, 110px);
+
+    line-height: .85;
+
+    letter-spacing: -.05em;
+
+    font-weight: 600;
+}
+
+
+/* --------------------
+   INFORMATION
+-------------------- */
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 40px;
+
+    border-top: 1px solid #ccc;
+
+    padding-top: 30px;
+}
+
+.info-grid div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.info-grid span {
+    font-size: 10px;
+
+    letter-spacing: .15em;
+
+    color: #777;
+}
+
+.info-grid strong {
+    font-size: 18px;
+
+    font-weight: 400;
+}
+
+
+/* --------------------
+   JOIN
+-------------------- */
+
+.join {
+    min-height: 100vh;
+
+    background: #8d8d8d;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+.join-inner {
+    width: 90%;
+}
+
+.join h2 {
+    font-size: clamp(70px, 14vw, 220px);
+
+    line-height: .78;
+
+    letter-spacing: -.08em;
+
+    margin-bottom: 60px;
+}
+
+.join h2 span {
+    color: #222;
+}
+
+.join p {
+    line-height: 2;
+
+    margin-bottom: 15px;
+}
+
+.join-button {
+    display: inline-block;
+
+    margin-top: 40px;
+
+    padding: 18px 35px;
+
+    border: 1px solid white;
+
+    font-size: 12px;
+
+    letter-spacing: .12em;
+
+    transition:
+        background .3s,
+        color .3s;
+}
+
+.join-button:hover {
+    background: white;
+
+    color: #111;
+}
+
+
+/* --------------------
+   FOOTER
+-------------------- */
+
+footer {
+    padding: 40px;
+
+    background: #111;
+
+    color: #777;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    letter-spacing: .08em;
+}
+
+
+/* --------------------
+   SCROLL ANIMATION
+-------------------- */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(40px);
+
+    transition:
+        opacity 1s,
+        transform 1s;
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* --------------------
+   MOBILE
+-------------------- */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 20px;
+    }
+
+    .header nav {
+        display: none;
+    }
+
+    .hero {
+        padding:
+            120px 20px
+            30px;
+    }
+
+    .hero h1 {
+        font-size: 22vw;
+    }
+
+    .hero h1 span {
+        margin-left: 5vw;
+    }
+
+    .hero-image {
+        padding:
+            0 20px
+            80px;
+    }
+
+    .section {
+        padding: 100px 20px;
+
+        display: block;
+    }
+
+    .section-number {
+        margin-bottom: 40px;
+    }
+
+    .section h2 {
+        margin-bottom: 50px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .activity {
+        min-height: 110px;
+
+        grid-template-columns:
+            40px 1fr 20px;
+    }
+
+    .activity h3 {
+        font-size: 17px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .wide-photo {
+        height: 60vh;
+    }
+
+    .photo-text {
+        left: 20px;
+        bottom: 25px;
+    }
+
+    .join h2 {
+        font-size: 22vw;
+    }
+
+    footer {
+        padding: 30px 20px;
+
+        display: block;
+    }
+
+    footer div:last-child {
+        margin-top: 30px;
+    }
+
+}
